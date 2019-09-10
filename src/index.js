@@ -1,24 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 class Plus extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { first: '0', second: '0', result: '0'};
+    this.state = { first: '0', second: '0'};
   }
 
   first_change(e) {
     this.setState({
-      first: document.getElementById('first').value
+      first: e.target.value
     })
   }
 
   second_change(e) {
     this.setState({
-      second: document.getElementById('second').value
+      second: e.target.value
     })
   }
 
@@ -42,7 +41,7 @@ class Plus extends React.Component {
   }
 }
 
-ReactDOM.render(<Plus first='1' second='1'/>, document.getElementById('root'));
+ReactDOM.render(<Plus />, document.getElementById('root'));
 // ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
